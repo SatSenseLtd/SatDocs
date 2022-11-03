@@ -1,0 +1,863 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.2">
+    
+    
+      
+        <title>Setting up AWS for processing - SatDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f9400aa.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-aws-for-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SatDocs" class="md-header__button md-logo" aria-label="SatDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SatDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setting up AWS for processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SatDocs" class="md-nav__button md-logo" aria-label="SatDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SatDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        SatSense Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setting up AWS for processing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Setting up AWS for processing
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-ec2-instance" class="md-nav__link">
+    Starting EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rds-database-setup" class="md-nav__link">
+    RDS database setup
+  </a>
+  
+    <nav class="md-nav" aria-label="RDS database setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rds-console" class="md-nav__link">
+    RDS console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-database-setup" class="md-nav__link">
+    Additional database setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-ebs-volumes" class="md-nav__link">
+    Setting up EBS volumes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daemon/" class="md-nav__link">
+        SatDaemon (SQLAlchemy Version)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataprocessing/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jira/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sftp_user_setup/" class="md-nav__link">
+        Sftp user setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Client facing applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Client facing applications" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Client facing applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/admin/" class="md-nav__link">
+        Admin Suite (satadmin)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/api/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/database/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/demo-portal/" class="md-nav__link">
+        Demo portal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/geoserver/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/overview/" class="md-nav__link">
+        SatSense Client-Facing Applications Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/portal/" class="md-nav__link">
+        Portal/SatShop (satportal)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/satdes/" class="md-nav__link">
+        Satdes (Data Extraction Service)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/satdom-scripts/" class="md-nav__link">
+        Satdom Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/satpgi/" class="md-nav__link">
+        Postgres Ingester (satpgi)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/tileserver-qgis-fiddle/" class="md-nav__link">
+        Integrating Tileservers into QGIS (fiddle)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/tileservers/" class="md-nav__link">
+        Tileservers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/webmisc/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/what-mike-does/" class="md-nav__link">
+        "What Mike does"
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_15" type="checkbox" id="__nav_7_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_15">
+          Portal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Portal" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_15">
+          <span class="md-nav__icon md-icon"></span>
+          Portal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-facing-applications/portal/portal-overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-ec2-instance" class="md-nav__link">
+    Starting EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rds-database-setup" class="md-nav__link">
+    RDS database setup
+  </a>
+  
+    <nav class="md-nav" aria-label="RDS database setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rds-console" class="md-nav__link">
+    RDS console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-database-setup" class="md-nav__link">
+    Additional database setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-ebs-volumes" class="md-nav__link">
+    Setting up EBS volumes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="setting-up-aws-for-processing">Setting up AWS for processing</h1>
+<h2 id="starting-ec2-instance">Starting EC2 instance</h2>
+<p>EC2 instances can be started from the AWS EC2 console. If just a single instance is required, simply select the stopped instance in the Instance screen, and select Actions -&gt; Instance Settings -&gt; Modify Instance Type to select the instance type required. Note that not all instance types are available, t3 (general purpose) and r5 (higher memory) instances work. A t3.medium instance works well for SatSAR, r5.xlarge works well for RapidSAR and beyond. Note that starting an instance like this does not come with additional storage attached, see the section on Setting up EBS volumes below. All software should be installed and environments set up for basic processing, except for the database, see the section on RDS database processing below. It's probably a good idea to run and apt upgrade and pull changes in from gitlab on the various bits of software. </p>
+<p>If multiple instances are required, we can create an image of the basic stopped instance. If necessary, start the instance and ensure the latest updates have been applied (apt and gitlab). Then from the console, go to Actions -&gt; Image and templates -&gt; Create image. Give the image a name and click "Create image". From the main console window, the image is now available from the AMI screen. This image can now be used to launch images. Ensure that the vpc is (vpc-770a581f) and that the subnet mask is the default for eu-west-2a. On the next screen, storage can be defined, or this can be added at a later time, see section on Setting up EBS volumes.</p>
+<p>One the instance is running (this can take a minute or more), you can ssh into the EC2 instance using the IP address or URL of the instance, which you can find on the Instances screen. The username is ubuntu. From the instances screen, you can also stop the instance, or run the shutdown command from the ssh session terminal. Note that storage continues to be billed, even if the instance is stopped. Any unused instance (besides the basic instance), including their EBS volumes, should be deleted.</p>
+<h2 id="rds-database-setup">RDS database setup</h2>
+<p>As our processing database is currently not accessible from outside Unipart network, we'll have to set up a specific database for AWS processing. Luckily this is a fairly streamlined process consisting of two parts, commissioning the database from the AWS RDS console, and setting up the specific requirements for the SatSense processing database. </p>
+<h3 id="rds-console">RDS console</h3>
+<p>From the console, we can determine the type of database we want, and set up security and connectivity settings. The steps listed below will set up a database suitable for SatSense processing:</p>
+<ul>
+<li>
+<p>From the main dashboard, click the Create Database button, and select "standard create" and "PostgreSQL". For the version, go with the latest subversion of version 12, at the time of writing version 12.8-R1.</p>
+</li>
+<li>
+<p>Give the database and identifier. Leave the username, and choose a password (and remember it!).</p>
+</li>
+<li>
+<p>Select burstable classes, type db.t3.micro</p>
+</li>
+<li>
+<p>Change storage type to "General Purpose SSD (gp2)" and leave allocated storage to the minimum 20 GB.</p>
+</li>
+<li>
+<p>Untick "Enable storage autoscaling" and select "Do not create a standby instance"</p>
+</li>
+<li>
+<p>Select the default VPC and subnet groups (vpc-770a581f), set availability zone to "eu-west-2a" and enable public access</p>
+</li>
+</ul>
+<p>After this, create database and wait for it to come online. This might take 15-30 minutes.</p>
+<h3 id="additional-database-setup">Additional database setup</h3>
+<p>Now we switch to a Linux terminal on our local system or an EC2 instance. EC2 instance is probably a better option, but not mandatory. If using a local terminal, ensure a postgresql client version 12 is installed. If using EC2, ensure it is a t2/t3.medium or above, as some memory will be required for the ingestion of bursts.</p>
+<ul>
+<li>
+<p>Set the $DBIP environment variable to the correct enpoint url. After the database has initialised, you can find the url in the Databases screen, under "Connectivity and Security". Here you can also find the port number, and ensure that the VPC and security groups match the EC2 instance you'll use.</p>
+</li>
+<li>
+<p>Log into database from EC2 instance or local system: <code>psql --host=$DBIP --port=5432 --username=postgres --password</code></p>
+</li>
+<li>
+<p>From psql, create satsense_live database <code>CREATE DATABASE satsense_live OWNER=postgres;</code></p>
+</li>
+<li>
+<p>Switch to database <code>\c satsense_live</code> </p>
+</li>
+<li>
+<p>Activate Postgis, see https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.PostGIS.html</p>
+</li>
+<li>
+<p>Log out of database</p>
+</li>
+<li>
+<p>Ensure $DBIP points to the RDS DB, and make sure the password, port and user are correct in satdaemon.cfg.</p>
+</li>
+<li>
+<p>From the satdaemon directory, run init_database.py <code>init_database.py -d satdaemon.cfg -f database/UK_frame_coords_ASF.txt -b database/UK_frame_burst_ids.txt -l database/burst_corners_llh.dat</code> This will take a while (30 mins or so?)</p>
+</li>
+</ul>
+<p>After this, you should be good to go. You can test the database by going into the satdaemon/database directory and running <code>python make_frames_shapefile_db.py</code>. If it completes at least one frame, the database is working as it should and you can stop the script with CTRL+c. That's it.</p>
+<h2 id="setting-up-ebs-volumes">Setting up EBS volumes</h2>
+<p>Disk space for EC2 instances is provided by Elastic Block Storage (EBS) volumes. EBS storage is charged by storage volume provided (not used!), and costs the same whether it is attached to a running instance, attached to a stopped instance or not attached. Except when processing, the only EBS volume should be the one that has the installation files of the stopped instance on it. </p>
+<p>EBS volumes can be created and deleted at will. This can be done in the EC2 console, under Elastic Block Store -&gt; Volumes. Click the "Create Volume" button and select volume type, which normally should be general provisioned SSD. Set the size and ensure Availability zone is the same as the EC2 instance (normally eu-west-2a) and click "Create Volume". The volume should be showing as "Available" momentarily.</p>
+<p>To use a volume inside an EC2 instance, it needs to be attached. Under normal conditions, EC2 volumes can only be attached to a single EC2 instance! Select the volume you wish to attach, and select Actions -&gt; Attach volume. Select the EC2 instance you wish to attach the volume to. </p>
+<p>To be able to use the volume, it has to be formated (if it is newly created) and mounted to a mount point. Volumes have to be remounted every time the instance gets restarted, unless there is an entry in fstab to automatically mount them. This is not receommended, as we likely want to switch volumes in and out. To first need to know where the volume is attached to:</p>
+<p><code>sudo lsblk</code></p>
+<p>This will show you a list of all attached devices. The EBS volume name will likely be nvme*n1, where * is 1,2,3,etc. We can see whether the volume needs formating using:</p>
+<p><code>sudo file -s /dev/nvme*n1</code></p>
+<p>Replacing * with the corresponding number. If the volume is already formated, the output will look similar to:</p>
+<p><code>/dev/nvme1n1: SGI XFS filesystem data (blksz 4096, inosz 512, v2 dirs)</code></p>
+<p>If not, it will look like this:</p>
+<p><code>/dev/nvme2n1: data</code></p>
+<p>To format the volume, use:</p>
+<p><code>sudo mkfs -t xfs /dev/nvme*n1</code></p>
+<p>To mount the disk, create a suitable mount point (e.g. /data, /workspace) and use:</p>
+<p><code>sudo mount /dev/nvme1n1 /mountdir</code></p>
+<p>Ensure you have write permission in the directory the volume is mounted to, and you're good to go.</p>
+<p>Volumes can be modified on the fly. This is useful when e.g. you need additional space. Not that volumes can only be increased, not decreased! To increase a volume, modify the volume through the Elastic Block Store screen in the EC2 console. Select the volume and go to Actions -&gt; Modify volume. Up the size to the desired value and click "Modify". Wait for the volume to reach Optimizing stage. The volume should now be ready to be expanded from inside the instance. If the volume was mounted, you can use the following command to attach the expanded storage to the same mount point, without disruption:</p>
+<p><code>sudo xfs_growfs -d /mountdir</code></p>
+<p>More information on growing an EBS volume can be found in the AWS docs (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html)</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: SatSense Documentation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              SatSense Documentation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../daemon/" class="md-footer__link md-footer__link--next" aria-label="Next: SatDaemon (SQLAlchemy Version)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SatDaemon (SQLAlchemy Version)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.39f04ddb.min.js"></script>
+      
+    
+  </body>
+</html>

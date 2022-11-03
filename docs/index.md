@@ -1,17 +1,20 @@
-# Welcome to SatDocs
+# SatSense Documentation
 
-We the SatDocs
+## Introduction
+This page collects the documentation of the various parts of SatSense technical
+development areas. The documentation is organised in various sections, described
+below.
 
-## Commands
+## [Processing](dataprocessing.md)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Here you'll find documentation regarding basic InSAR processing, ranging from 
+downloading data all the way to postprocessing data.
 
-## Project layout
+## [Daemon](daemon.md)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Here you'll find documentation regarding the automatic processing daemon and the 
+graphical user interface, covering starting and stopping the daemon, defining 
+processing frames, setting up new processing databases and using the interface.
+
+## [Client-Facing Applications Overview](client-facing-applications/overview.md)
+Here you'll find documentation regarding the client-facing application ecosystem.  These applications are responsible for taking processed InSAR data and making it accessible to an end user.  
