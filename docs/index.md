@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Welcome to SatDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+We the SatDocs
 
 ## Commands
 
