@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.2">
     
     
       
-        <title>SatDocs</title>
+        <title>Integrating Tileservers into QGIS (fiddle) - SatDocs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.9f9400aa.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9f9400aa.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#integrating-tileservers-into-qgis-fiddle" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="SatDocs" class="md-header__button md-logo" aria-label="SatDocs" data-md-component="logo">
+    <a href="../.." title="SatDocs" class="md-header__button md-logo" aria-label="SatDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Integrating Tileservers into QGIS (fiddle)
             
           </span>
         </div>
@@ -161,7 +166,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="SatDocs" class="md-nav__button md-logo" aria-label="SatDocs" data-md-component="logo">
+    <a href="../.." title="SatDocs" class="md-nav__button md-logo" aria-label="SatDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -180,7 +185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         SatSense Documentation
       </a>
     </li>
@@ -195,7 +200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/AWS/" class="md-nav__link">
+      <a href="../../AWS/" class="md-nav__link">
         Setting up AWS for processing
       </a>
     </li>
@@ -210,7 +215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/daemon/" class="md-nav__link">
+      <a href="../../daemon/" class="md-nav__link">
         SatDaemon (SQLAlchemy Version)
       </a>
     </li>
@@ -225,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/dataprocessing/" class="md-nav__link">
+      <a href="../../dataprocessing/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -240,7 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/jira/" class="md-nav__link">
+      <a href="../../jira/" class="md-nav__link">
         Jira
       </a>
     </li>
@@ -255,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sftp_user_setup/" class="md-nav__link">
+      <a href="../../sftp_user_setup/" class="md-nav__link">
         Sftp user setup
       </a>
     </li>
@@ -268,12 +273,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -296,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/admin/" class="md-nav__link">
+      <a href="../admin/" class="md-nav__link">
         Admin Suite (satadmin)
       </a>
     </li>
@@ -310,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/api/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -324,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/database/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -338,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/demo-portal/" class="md-nav__link">
+      <a href="../demo-portal/" class="md-nav__link">
         Demo portal
       </a>
     </li>
@@ -352,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/geoserver/" class="md-nav__link">
+      <a href="../geoserver/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -366,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         SatSense Client-Facing Applications Overview
       </a>
     </li>
@@ -380,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/portal/" class="md-nav__link">
+      <a href="../portal/" class="md-nav__link">
         Portal/SatShop (satportal)
       </a>
     </li>
@@ -394,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/satdes/" class="md-nav__link">
+      <a href="../satdes/" class="md-nav__link">
         Satdes (Data Extraction Service)
       </a>
     </li>
@@ -408,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/satdom-scripts/" class="md-nav__link">
+      <a href="../satdom-scripts/" class="md-nav__link">
         Satdom Scripts
       </a>
     </li>
@@ -422,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/satpgi/" class="md-nav__link">
+      <a href="../satpgi/" class="md-nav__link">
         Postgres Ingester (satpgi)
       </a>
     </li>
@@ -434,11 +441,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/client-facing-applications/tileserver-qgis-fiddle/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Integrating Tileservers into QGIS (fiddle)
       </a>
+      
     </li>
   
 
@@ -450,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/tileservers/" class="md-nav__link">
+      <a href="../tileservers/" class="md-nav__link">
         Tileservers
       </a>
     </li>
@@ -464,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/webmisc/" class="md-nav__link">
+      <a href="../webmisc/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -478,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/what-mike-does/" class="md-nav__link">
+      <a href="../what-mike-does/" class="md-nav__link">
         "What Mike does"
       </a>
     </li>
@@ -518,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/client-facing-applications/portal/portal-overview/" class="md-nav__link">
+      <a href="../portal/portal-overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -556,6 +573,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -567,8 +586,66 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="integrating-tileservers-into-qgis-fiddle">Integrating Tileservers into QGIS (fiddle)</h1>
+<p>Whilst the portal is a useful tool, it doesn't currently match the feature-rich environment that QGIS provides.  Here, we detail how to integrate the <a href="../tileservers/">satsense tileservers</a> into QGIS. These instructions were written for QGIS 3.4, but they should be transferable to other versions.</p>
+<p>The idea is to add a new "XYZ Tiles" connection to QGIS, and this connection will contain details of the tileserver that the portal plugs into.  We first give a general overview of how to add a new "XYZ Tiles" connection and then this will motivate the parameters we need to find from the portal.</p>
+<h1 id="adding-a-new-xyz-tiles-connection-into-qgis">Adding a new "XYZ Tiles" connection into QGIS</h1>
+<p>Make sure the "Browser" panel is open, if not you can open by clicking "View" -&gt; "Panels" -&gt; Check "Browser".</p>
+<p>In the "Browser" panel, right click "XYZ Tiles" and click "New Connection", as seen here:</p>
+<p><img alt="Click New Connection" src="../images/qgis-click-new-connection.png" /></p>
+<p>This will open a window much like the following:</p>
+<p><img alt="Add New Connection" src="../images/qgis-new-connection-config.png" /></p>
+<p>In the above image:</p>
+<ul>
+<li>The "Name" can be anything you want (although I would recommend making it descriptive);</li>
+<li>The "URL" is the url of the tileserver.  We will discuss the URL for the satsense tileservers in the <a href="#finding-the-url-for-a-satsense-tileserver">next session</a>.</li>
+<li>Sometimes tileservers have some authentication to prevent unauthorised access and that can be set up in the "Authentication" section.  However, for the satsense tileservers, we can safely ignore this section - panic not, the tileserver is protected by api keys contained in the url (as you shall see).</li>
+<li>Hopefully the "Min/Max Zoom levels" are fairly self-evident. The portal uses a Min Zoom level of 0 and a Max Zoom level of 19.  </li>
+</ul>
+<h1 id="finding-the-url-for-a-satsense-tileserver">Finding the url for a satsense tileserver</h1>
+<p>For the tileserver that provides tiles for the site <code>https://satshop.satsense.com</code>, tileserver urls are:</p>
+<pre><code># For ascending data
+https://satshop.satsense.com/tiles/hr_asc_vels/{z}/{x}/{y}.png?access_token=ThisIsAnAccessToken&amp;scale_min=-10&amp;scale_max=10
+
+# For descending data
+https://satshop.satsense.com/tiles/hr_desc_vels/{z}/{x}/{y}.png?access_token=ThisIsAnAccessToken&amp;scale_min=-10&amp;scale_max=10
+</code></pre>
+<p>However, the reader will need to find their access token (which will not be equal to the value <code>ThisIsAnAccessToken</code> suggested above). Currently, there is no user-friendly way to do this, but we will now go into some detail in how to obtain the access token. </p>
+<p>First, log into the <a href="https://satshop.satsense.com/portal">satshop/portal</a>. Your access token will now be stored in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">session storage</a>.  Session storage is a bit like cookie storage except that the data is never transferred to a server, and it is deleted when the browser/tab is closed.  Most modern browsers allow easy access to values in their session storage. We detail how to see session storage for firefox and chrome - other browsers should provide a similar mechanism. </p>
+<p>In both of the following examples, we've redacted any sensitive values.  In these examples, the reader is looking for a value starting with "8a3e..." and whose key is called "apiKey" (we acknowledge that the name "apiKey" is not ideal since we've been calling it an "access token" for some time).  The reader's own access token ("apiKey") is unlikely to start with "8a3e...".</p>
+<h2 id="firefox">Firefox</h2>
+<ul>
+<li>Right click anywhere on the portal page that isn't interactive (e.g. a button, leaflet map etc).</li>
+<li>Click "Inspect Element" from the menu.</li>
+<li>The "developer tools" should open. The reader is looking for a tab called "Storage", for which they might need to press the arrows &gt;&gt;.</li>
+<li>Open "Session Storage" and click "https://satshop.satsense.com".</li>
+</ul>
+<p>The reader should see something like this:
+<img alt="Firefox Session Storage" src="../images/firefox-session-storage.png" /></p>
+<h2 id="chrome">Chrome</h2>
+<ul>
+<li>Right click anywhere on the portal page that isn't interactive (e.g. a button, leaflet map etc).</li>
+<li>Click "Inspect" from the menu.</li>
+<li>The "developer tools" should open.  Click the tab "Application".</li>
+<li>Under the "Storage" section, open "Session Storage".</li>
+<li>Click "https://satshop.satsense.com"</li>
+</ul>
+<p>The reader should see something like this:
+<img alt="Chrome Session Storage" src="../images/chrome-session-storage.png" /></p>
+<h1 id="final-notes">Final Notes</h1>
+<p>Once the reader has found their session token, they can replace the string "ThisIsAnAccessToken" with their token in the urls suggested at the start of <a href="#finding-the-url-for-a-satsense-tileserver">the previous section</a>.  One of these urls (depending one whether you want ascending or descending data) then goes into "URL" section when adding a <a href="#adding-a-new-xyz-tiles-connection-into-qgis">new connection to QGIS</a>.  If you want both ascending and descending data, you should add two connections.  </p>
+<p>Once the connection has been created, the reader can add it to their project by right clicking their created connection in the "Browser" panel and then clicking "Add Selected Layer(s) to Canvas". See the following screenshot:</p>
+<p><img alt="Add Layer To Canvas" src="../images/qgis-add-layer-to-canvas.png" /></p>
+<p>We finish on the note that one can change the "scale" (in the same meaning as the colour bar in the portal), by altering the values for "scale_min" and "scale_max" in the urls.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -578,6 +655,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../satpgi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Postgres Ingester (satpgi)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Postgres Ingester (satpgi)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../tileservers/" class="md-footer__link md-footer__link--next" aria-label="Next: Tileservers" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tileservers
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -600,10 +713,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.39f04ddb.min.js"></script>
+      <script src="../../assets/javascripts/bundle.39f04ddb.min.js"></script>
       
     
   </body>

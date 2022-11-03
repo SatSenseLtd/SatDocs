@@ -1,0 +1,862 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.2">
+    
+    
+      
+        <title>Tileservers - SatDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9f9400aa.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tileservers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SatDocs" class="md-header__button md-logo" aria-label="SatDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SatDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tileservers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SatDocs" class="md-nav__button md-logo" aria-label="SatDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SatDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        SatSense Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AWS/" class="md-nav__link">
+        Setting up AWS for processing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../daemon/" class="md-nav__link">
+        SatDaemon (SQLAlchemy Version)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dataprocessing/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jira/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sftp_user_setup/" class="md-nav__link">
+        Sftp user setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Client facing applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Client facing applications" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Client facing applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin/" class="md-nav__link">
+        Admin Suite (satadmin)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo-portal/" class="md-nav__link">
+        Demo portal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geoserver/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        SatSense Client-Facing Applications Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/" class="md-nav__link">
+        Portal/SatShop (satportal)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../satdes/" class="md-nav__link">
+        Satdes (Data Extraction Service)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../satdom-scripts/" class="md-nav__link">
+        Satdom Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../satpgi/" class="md-nav__link">
+        Postgres Ingester (satpgi)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tileserver-qgis-fiddle/" class="md-nav__link">
+        Integrating Tileservers into QGIS (fiddle)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tileservers
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webmisc/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-mike-does/" class="md-nav__link">
+        "What Mike does"
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_15" type="checkbox" id="__nav_7_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_15">
+          Portal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Portal" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_15">
+          <span class="md-nav__icon md-icon"></span>
+          Portal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/portal-overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tileservers">Tileservers</h1>
+<p>Instructions for how to install sat-tileserver are kept in the project <a href="https://gitlab.com/SatSenseLtd/sat-tileserver/-/blob/master/README.md">README</a>.  What that README does not make explicit is where everything is installed on the live server.  We detail that in this documentation, along with some caveats when trying to run the tileserver behind apache.</p>
+<h1 id="contents">Contents</h1>
+<ul>
+<li><a href="#live-server-locations">Live Server Locations</a> - where files related to the tileservers are kept on the live server.</li>
+<li><a href="#first-release">First Release</a> - how to release a brand new tileserver.</li>
+<li><a href="#release-update">Release Update</a> - how to release an update to tileserver that's already been released.</li>
+<li><a href="#troubleshooting">Troubleshooting</a> - something not working? No problem.</li>
+</ul>
+<h1 id="live-server-locations">Live Server Locations</h1>
+<p>On the live server, we run several tileservers, one for each portal project.  This is a list of the tile servers that are running, along with locations of related important files:</p>
+<table>
+<thead>
+<tr>
+<th>Tileserver name</th>
+<th>Domain end point</th>
+<th>Httpd log directory</th>
+<th>Httpd config file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tileserver-satshop</td>
+<td>satshop.satsense.com/tiles</td>
+<td>/var/www/satshop/log</td>
+<td>/etc/httpd/sites-available/satshop.conf</td>
+</tr>
+<tr>
+<td>tileserver-staging</td>
+<td>portal.staging.satsense.com/tiles</td>
+<td>/var/www/flask-portal-staging/log</td>
+<td>/etc/httpd/sites-available/flask-portal-staging.conf</td>
+</tr>
+<tr>
+<td>tileserver-demo</td>
+<td>demo.satsense.com/tiles</td>
+<td>/var/www/demo-portal-live/log</td>
+<td>/etc/httpd/sites-available/demo-portal-live.conf</td>
+</tr>
+<tr>
+<td>tileserver-demo-staging</td>
+<td>demo.staging.satsense.com/tiles</td>
+<td>/var/www/demo-portal-staging/log</td>
+<td>/etc/httpd/sites-available/demo-portal-staging.conf</td>
+</tr>
+<tr>
+<td>tileserver-portal2</td>
+<td>portal2.satsense.com/tiles</td>
+<td>/var/www/flask-portal2/log</td>
+<td>/etc/httpd/sites-available/flask-portal2.conf</td>
+</tr>
+<tr>
+<td>tileserver-portal3</td>
+<td>portal3.satsense.com/tiles</td>
+<td>/var/www/portal3/log</td>
+<td>/etc/httpd/sites-available/portal3.conf</td>
+</tr>
+</tbody>
+</table>
+<p>The httpd log directories and httpd config files are shared with the portal httpd set up because they are provided by the same domain. </p>
+<p>Other files related to the above projects are kept in the following locations on the live server:</p>
+<ul>
+<li>Virtual environments are in the directories <code>/var/www/venvs/&lt;Tileserver name&gt;</code>.</li>
+<li>Project code is in the directories <code>/var/www/&lt;Tileserver name&gt;/Tileserver</code>.</li>
+<li>Tile overview geotiffs are kept in the directory <code>/data/tile_geotiffs</code>.  We don't keep an explicit log for where each tileserver's geotiffs are kept. However, one can look in the tileserver config files to see which geotiffs are being used e.g. <code>/var/www/tileserver-satshop/Tileserver/config.ini</code> will refer to which geotiffs are being used for <code>tileserver-satshop</code>. </li>
+</ul>
+<h1 id="first-release">First Release</h1>
+<p>These are instructions for if you need to release a new tileserver. If you need to release an update, please see the <a href="#release-update">Release Update</a> section.</p>
+<h2 id="set-up-code-and-virtual-environment">Set Up Code and Virtual Environment</h2>
+<p>Create the venvs folder, if it doesn't exist:</p>
+<pre><code class="language-commandline">sudo mkdir /var/www/venvs
+sudo chown centos:apache /var/www/venvs
+</code></pre>
+<p>Create and activate a new virtual environment for the tileserver:</p>
+<pre><code class="language-commandline">virtualenv /var/www/venvs/tileserver-new-ts
+source /var/www/venvs/tileserver-new-ts/bin/activate
+</code></pre>
+<p>Make sure mapnik is installed, see the project <a href="https://gitlab.com/SatSenseLtd/sat-tileserver/-/blob/master/README.md">README</a>. Create a new directory for the tileserver project, and checkout the project inside that directory:</p>
+<pre><code class="language-commandline">sudo mkdir /var/www/tileserver-new-ts
+sudo chown centos:apache /var/www/tileserver-new-ts
+git clone https://gitlab.com/SatSenseLtd/sat-tileserver.git /var/www/tileserver-new-ts/Tileserver
+</code></pre>
+<p>Then install the project into the virtual environment as per the project <a href="https://gitlab.com/SatSenseLtd/sat-tileserver/-/blob/master/README.md">README</a>.</p>
+<p>Some of the dependencies in the virtual environment will fall fowl of SELinux once the WSGI is set up.  You'll need to update the SELinux context of these dependencies:</p>
+<pre><code class="language-commandline">semanage fcontext -a -t httpd_sys_script_exec_t '/var/www/venvs/tileserver-new-ts/lib/python2.7/site-packages/.*\.so(\..*)?'
+sudo restorecon -R -v /var/www/venvs/tileserver-new-ts/lib/python2.7/site-packages/
+</code></pre>
+<p>Finally, make sure the project configuration is set up correctly (see the project <a href="https://gitlab.com/SatSenseLtd/sat-tileserver/-/blob/master/README.md">README</a>).  If you want to test the virtual environment and config is set up correctly, you can run the development server by running</p>
+<pre><code class="language-commandline">python /var/www/tileserver-new-ts/Tileserver/Scripts/run_tilestache_dev_server.py
+</code></pre>
+<p>with the <code>/var/www/venvs/tileserver-new-ts</code> virtual environment activated. Note you might need to first run</p>
+<pre><code class="language-commandline">export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+</code></pre>
+<p>Finally, you will be wanting to serve overview geotiffs from a folder.  With selinux, that folder needs to have the <code>httpd_sys_content_t</code> context.  To give an explicit example of how to set this context up, we assume you are storing tile geotiffs within <code>/data/tile_geotiffs</code>:</p>
+<pre><code class="language-commandline">sudo semanage fcontext -a -t httpd_sys_content_t &quot;/data/tile_geotiffs(/.*)?&quot;
+sudo restorecon -R -v /data/tile_geotiffs
+</code></pre>
+<h2 id="wsgi-set-up">WSGI set up</h2>
+<p>We currently run the tileserver using the apache module <code>mod_wsgi</code>.  Check the folder <code>/etc/httpd/modules</code> for a file called <code>mod_wsgi.so</code> to see it is installed.  If not, this can be installed via:</p>
+<pre><code class="language-commandline">sudo yum install mod_wsgi
+</code></pre>
+<p>By default, mapnik installs in <code>/usr/local/lib</code>.  We need to update the library path in apache so that it knows to find it.  This can be set by adding the variable</p>
+<pre><code>LD_LIBRARY_PATH=/usr/local/lib/
+</code></pre>
+<p>to <code>/etc/sysconfig/httpd</code>.</p>
+<p>Then, a virtual host (e.g. <code>/etc/httpd/sites-available/new_portal</code>, full instructions are <a href="../portal/">here</a>) should be populated with something like:</p>
+<pre><code class="language-commandline">WSGIScriptAlias /tiles /var/www/tileserver-new-ts/Tileserver/tileserver.wsgi
+WSGIDaemonProcess tileserver_new_ts python-home=/var/www/venvs/tileserver-new-ts processes=4 threads=1
+WSGIProcessGroup tileserver_new_ts
+</code></pre>
+<p>Then to load in the new configurations, this requires a <code>httpd</code> restart:</p>
+<pre><code class="language-commandline">sudo systemctl restart httpd.service
+</code></pre>
+<p>Bear in mind that a httpd restart will mean that the server is unable to respond to requests for a few seconds (therefore best to perform this out of hours).</p>
+<h1 id="release-update">Release Update</h1>
+<p>These are instructions for if you need to release an update to a tileserver that is already released. </p>
+<p>You can update the config as needed, see the project <a href="https://gitlab.com/SatSenseLtd/sat-tileserver/-/blob/master/README.md">README</a>.  To update the code, just use <code>git</code> to pull in the latest required changes.  After a change in the project, apache needs to be reloaded:</p>
+<pre><code class="language-commandline">sudo systemctl reload httpd.service
+</code></pre>
+<p>This is a soft restart and does not interrupt the current request handling i.e. this can be performed at any point.</p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>If the tileserver is already set up and it suddenly stops working, see the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No tiles render</td>
+<td><ul><li><a href="#check-httpd-errors">Check httpd errors</a></li><li><a href="#test-development-server">Test development server</a></li><li><a href="#httpd-reload-or-restart">Httpd reload or restart</a></li></ul></td>
+</tr>
+<tr>
+<td>Overview geotiff tiles render but point tiles do not</td>
+<td><ul><li><a href="#check-httpd-errors">Check httpd errors</a></li><li><a href="#test-development-server">Test development server</a></li><li><a href="#httpd-reload-or-restart">Httpd reload or restart</a></li></ul></td>
+</tr>
+<tr>
+<td>Point tiles render, but overview geotiff tiles do not</td>
+<td><ul><li><a href="#check-tileserver-config-vs-overview-geotiffs">Check tileserver config vs overview geotiffs</a></li><li><a href="#check-httpd-errors">Check httpd errors</a></li><li><a href="#test-development-server">Test development server</a></li><li><a href="#httpd-reload-or-restart">Httpd reload or restart</a></li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Some top tips for when setting up the tileserver and you run into problems.  Check the logs and see if the error matches with the following:</p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ImportError: No module named Image</code></td>
+<td>Check the virtual environment <code>.so</code> files have the correct selinux context, see above about adding <code>httpd_sys_script_exec_t</code> context</td>
+</tr>
+<tr>
+<td><code>NameError: global name 'mapnik' is not defined</code></td>
+<td>Check you've added <code>LD_LIBRARY_PATH=/usr/local/lib/</code> to <code>/etc/sysconfig/httpd</code>.</td>
+</tr>
+<tr>
+<td><code>/data/tile_geotiffs/.../path/to/geotiff/tiles_4326_10.tif does not exist in file system</code></td>
+<td>Check the geotiff files have the correct selinux context, see above about adding <code>httpd_sys_content_t</code> context</td>
+</tr>
+</tbody>
+</table>
+<h2 id="actions">Actions</h2>
+<p>These are the instructions for the actions list above, we try to provide generic instructions but for illustrate them with examples of commands specific to the satshop tileserver (i.e. the tileserver named "tileserver-satshop").</p>
+<h3 id="check-httpd-errors">Check httpd errors</h3>
+<p>The httpd error logs are in the httpd log directories (locations detailed in the <a href="#live-server-locations">Live Server Locations</a> section).</p>
+<h3 id="test-development-server">Test development server</h3>
+<p>This might give you more insights into the errors that are being thrown.</p>
+<p>Activate the tileserver virtual environment</p>
+<pre><code class="language-commandline">source /var/www/venvs/tileserver-satshop/bin/activate
+</code></pre>
+<p>Change directory to the tileserver root</p>
+<pre><code class="language-commandline">cd /var/www/tileserver-satshop/Tileserver
+</code></pre>
+<p>And run the development server:</p>
+<pre><code class="language-commandline">python Scripts/run_tilestache_dev_server.py -p &lt;port of your choosing&gt;
+</code></pre>
+<p>If the server runs without errors, you may want to check it can receive requests successfully. You can set this up using a proxy in apache, which will forward the requests to this port (similar to what we do with the flask applications).  <strong>Do not</strong> leave the application running in this state - the above command just runs a development server and it should not be used in production.</p>
+<h3 id="check-tileserver-config-vs-overview-geotiffs">Check tileserver config vs overview geotiffs</h3>
+<p>Check where the config (locations are in the root of the Project code, see <a href="#live-server-locations">Live Server Locations</a> section) is expecting to find the geotiff overview tiles, make sure they exist/replace with back ups.</p>
+<h3 id="httpd-reload-or-restart">Httpd reload or restart</h3>
+<p>Reloading is a softer version of the "restarting" the httpd process. Reloading should not impact the server dealing with requests, but restarting may. The commands are:</p>
+<pre><code>sudo systemctl reload httpd.service
+sudo systemctl restart httpd.service
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../tileserver-qgis-fiddle/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Integrating Tileservers into QGIS (fiddle)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Integrating Tileservers into QGIS (fiddle)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../webmisc/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.39f04ddb.min.js"></script>
+      
+    
+  </body>
+</html>
