@@ -3,4 +3,4 @@ site_name: SatDocs
 theme:
   name: material
   palette:
-    primary: blue
+    primary: red
