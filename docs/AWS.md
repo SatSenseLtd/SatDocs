@@ -89,3 +89,23 @@ Volumes can be modified on the fly. This is useful when e.g. you need additional
 
 More information on growing an EBS volume can be found in the AWS docs (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html)
 
+## S3 archiving
+Simple Storage Service is a bucket based storage system allowing a range of storage performance levels, ranging from high performance to infrequent access glacier storage. We mainly use S3 for their glacier storage. Syncing large volumes of data from EBS to S3 (or vice versa) is best done using aws-cli, which can be installed using apt-get and configured as follows:
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
+### Setting up a bucket
+The S3 dashboard can be accessed through the AWS console. A new bucket can be created using the Create Bucket button. Give it a name (Stringent rules, e.g. no capital letters or underscores allowed) and ensure it is in the eu-west-2 region. All other settings are fine. The storage class (https://aws.amazon.com/s3/storage-classes/) is best set through a lifecycle rule. Typically, we'll want to use glacier storage for larger files. To set this up, go to the bucket and in the Management tab click Create lifecycle rule. Give the rule a name (e.g. Glacier), and specify Minimum object size (1000 or 10000 kb) to avoid small files being archived, as there is a cost per object. In the Lifecycle action, tick "Move current versions of objects between storage classes", and in the box below select "Glacier Flexible Retrieval" in the Storage Class drop-down menu. Set the "Days after object creation"value to somewhere between 3 and 5 days, and creeate the rule. This will ensure any object larger than the minimum object size will automatically get moved to Glacier storage after 3-5 days.
+
+### Moving data to a bucket
+Data can be added through the dashboard directly from a local machine, but for bulk transfers, the aws cli is best used. From an EC2 instance, this would look something like:
+`aws s3 sync <Local directory of file names to sync> s3://<bucket-name>
+
+### Retrieving data from a bucket
+The data sync works in reverse as well, but only if the data is available in the Standard storage class. This means any file that is in Glacier needs to be retrieved first. To do this, select any files that need retrieval and selecting "Initiate Restore" in the "Actions" menu. Note that this can only be done on files (not whole directories), and only on files that are in Glacier, selecting a mix of Glacier and Standard files will leave the retrieval option greyed out. Set the number of days that files will remained restored, and select how quickly files should be restored. The quicker, the costlier. Then click on Initiate Restore at the bottom. Note that the files will not be listed as Standard storage class after restoration has completed, the best way I've found to see if the restore has completed is to click on the files, and ta box in blue will say whether the restore is in progress or has completed. 
+
+To sync restored files using the AWS cli, note that the --force-glacier-transfer is required, as the file is still marked as being a glacier object:
+ `aws s3 sync s3://<bucket-name>/<DIR or FILE to sync> <Local Dir to sync to> --force-glacier-transfer
+  
+
+
+
